@@ -27,8 +27,8 @@ function calculateValues() {
         return null;
     }
 
-    if (price <= 0 || volume <= 0 || alcohol < 0 || alcohol > 100) {
-        alert('Please enter valid values (price > 0, volume > 0, alcohol 0-100)');
+    if (price <= 0 || volume <= 0 || alcohol <= 0 || alcohol > 100) {
+        alert('Please enter valid values (price > 0, volume > 0, alcohol > 0 and ≤ 100)');
         return null;
     }
 
