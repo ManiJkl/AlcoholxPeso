@@ -65,11 +65,12 @@ function addToComparison() {
     
     if (values) {
         const item = {
-            id: itemCounter++,
-            name: `Beverage ${itemCounter - 1}`,
+            id: itemCounter,
+            name: `Beverage ${itemCounter}`,
             ...values
         };
         
+        itemCounter++;
         comparisonItems.push(item);
         updateComparisonList();
         
