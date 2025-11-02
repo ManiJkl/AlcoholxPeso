@@ -4,54 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista de Alcoholes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
     }
 
     body {
-      font-family: 'Montserrat', Arial, sans-serif;
-      background-color: #f6f6f6;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
       margin: 0;
-      padding: 20px;
+      padding: 0;
       color: #333;
+      min-height: 100vh;
     }
 
-    h1 {
+    header {
+      background: linear-gradient(90deg, #43a047, #66bb6a);
+      color: white;
       text-align: center;
-      color: #2b2b2b;
-      margin-bottom: 20px;
+      padding: 25px 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 1px;
     }
 
     .buscador {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
+      gap: 12px;
+      margin: 25px auto;
+      padding: 0 15px;
+      max-width: 900px;
     }
 
     input[type="text"], input[type="number"] {
-      padding: 10px;
+      padding: 12px 14px;
       width: 250px;
       max-width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      border: 1px solid #cfd8dc;
+      border-radius: 10px;
       font-size: 16px;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
+      background-color: white;
     }
 
     input:focus {
-      border-color: #4CAF50;
+      border-color: #43a047;
       outline: none;
-      box-shadow: 0 0 5px rgba(76,175,80,0.4);
+      box-shadow: 0 0 6px rgba(67,160,71,0.4);
+      transform: scale(1.02);
     }
 
     .tabla-container {
       overflow-x: auto;
-      border-radius: 10px;
       background-color: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 90%;
+      margin: 0 auto 40px;
+      transition: all 0.3s ease;
     }
 
     table {
@@ -61,17 +78,30 @@
     }
 
     th, td {
-      border: 1px solid #ddd;
-      padding: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 12px 10px;
       text-align: center;
       font-size: 15px;
     }
 
     th {
-      background-color: #4CAF50;
+      background-color: #4caf50;
       color: white;
       font-weight: 600;
       cursor: pointer;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+
+    th:hover {
+      background-color: #43a047;
+    }
+
+    th::after {
+      content: "⇅";
+      font-size: 12px;
+      opacity: 0.7;
+      margin-left: 6px;
     }
 
     tr:nth-child(even) {
@@ -79,25 +109,42 @@
     }
 
     tr:hover {
-      background-color: #e9f5e9;
+      background-color: #e8f5e9;
+      transform: scale(1.01);
+      transition: all 0.2s ease;
+    }
+
+    td {
+      transition: background-color 0.2s ease;
+    }
+
+    /* Animación sutil al cargar filas */
+    tbody tr {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 768px) {
-      body {
-        padding: 10px;
+      header h1 {
+        font-size: 22px;
+      }
+
+      .buscador {
+        flex-direction: column;
+        align-items: center;
       }
 
       table {
         font-size: 14px;
         min-width: 600px;
-      }
-
-      h1 {
-        font-size: 22px;
-      }
-
-      input[type="text"], input[type="number"] {
-        width: 100%;
       }
     }
 
@@ -107,19 +154,21 @@
         padding: 8px;
       }
 
-      h1 {
+      header h1 {
         font-size: 20px;
       }
     }
   </style>
 </head>
 <body>
-  <h1>Lista de Alcoholes</h1>
+  <header>
+    <h1>🍸 Lista de Alcoholes</h1>
+  </header>
 
   <div class="buscador">
-    <input type="text" id="buscar" placeholder="Buscar por nombre...">
-    <input type="number" id="precioMin" placeholder="Precio mínimo">
-    <input type="number" id="precioMax" placeholder="Precio máximo">
+    <input type="text" id="buscar" placeholder="🔍 Buscar por nombre...">
+    <input type="number" id="precioMin" placeholder="💰 Precio mínimo">
+    <input type="number" id="precioMax" placeholder="💵 Precio máximo">
   </div>
 
   <div class="tabla-container">
@@ -131,7 +180,7 @@
           <th data-col="Cantidad (ml)">Cantidad (ml)</th>
           <th data-col="Porcentaje">Porcentaje</th>
           <th data-col="Alcohol ml">Alcohol ml</th>
-          <th data-col="cop x ml alcohol">cop x ml alcohol</th>
+          <th data-col="cop x ml alcohol">COP x ml alcohol</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -178,8 +227,9 @@
     function mostrarTabla(lista) {
       const tbody = document.querySelector('#tablaAlcoholes tbody');
       tbody.innerHTML = '';
-      lista.forEach(item => {
+      lista.forEach((item, i) => {
         const fila = document.createElement('tr');
+        fila.style.animationDelay = `${i * 0.03}s`;
         fila.innerHTML = `
           <td>${item.Nombre}</td>
           <td>${item.Precio}</td>
@@ -192,7 +242,7 @@
       });
     }
 
-    // Ordenar columnas al hacer clic
+    // Ordenar columnas
     document.querySelectorAll('th').forEach(th => {
       th.addEventListener('click', () => {
         const columna = th.getAttribute('data-col');
