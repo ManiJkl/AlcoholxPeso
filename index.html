@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AlcoholxPeso</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de Alcoholes</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>AlcoholxPeso</h1>
-    <input id="buscador" type="text" placeholder="Buscar alcohol..." />
+    <h1>Listado de Alcoholes</h1>
   </header>
 
-  <main id="contenedor"></main>
+  <main>
+    <table id="tabla-alcohol">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>% Alcohol</th>
+          <th>Precio (COP)</th>
+          <th>Volumen (ml)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aquí se insertan las filas desde JS -->
+      </tbody>
+    </table>
+  </main>
 
   <footer>
-    <p>© 2025 AlcoholxPeso</p>
+    <p>Datos cargados automáticamente desde Excel (convertido a CSV)</p>
   </footer>
 
   <script src="script.js"></script>
