@@ -1,0 +1,472 @@
+[
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Nombre",
+    "Unnamed: 3": "Precio",
+    "Unnamed: 4": "Cantidad (ml)",
+    "Unnamed: 5": "Porcentaje",
+    "Unnamed: 6": "Alcohol ml",
+    "Unnamed: 7": "cop x ml alcohol"
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Aguardiente ANTIOQUENO azul sin azúcar en caja",
+    "Unnamed: 3": 48650,
+    "Unnamed: 4": 1050,
+    "Unnamed: 5": 0.29,
+    "Unnamed: 6": 304.5,
+    "Unnamed: 7": 159.77011494252875
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Aguardiente ANTIOQUENO verde sin azúcar caja",
+    "Unnamed: 3": 43100,
+    "Unnamed: 4": 1050,
+    "Unnamed: 5": 0.24,
+    "Unnamed: 6": 252,
+    "Unnamed: 7": 171.03174603174602
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Aguardiente BLANCO Del Valle fiesta sin azúcar botella",
+    "Unnamed: 3": 42100,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.29,
+    "Unnamed: 6": 217.49999999999997,
+    "Unnamed: 7": 193.56321839080462
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Cerveza ANDINA dorada lata x6und",
+    "Unnamed: 3": 12550,
+    "Unnamed: 4": 1614,
+    "Unnamed: 5": 0.04,
+    "Unnamed: 6": 64.56,
+    "Unnamed: 7": 194.39281288723666
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Ron blanco BACARDI Sabor limón",
+    "Unnamed: 3": 52000,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.35,
+    "Unnamed: 6": 262.5,
+    "Unnamed: 7": 198.0952380952381
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Aguardiente ANTIOQUENO verde sin azúcar garrafa",
+    "Unnamed: 3": 86200,
+    "Unnamed: 4": 1750,
+    "Unnamed: 5": 0.24,
+    "Unnamed: 6": 420,
+    "Unnamed: 7": 205.23809523809524
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Ron VIEJO DE CALDAS Tradicional",
+    "Unnamed: 3": 55000,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.35,
+    "Unnamed: 6": 262.5,
+    "Unnamed: 7": 209.52380952380952
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Vino Tinto CRUZARES MARCA EXCLUSIVA",
+    "Unnamed: 3": 16940,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.1068,
+    "Unnamed: 6": 80.10000000000001,
+    "Unnamed: 7": 211.48564294631709
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Cerveza HEINEKEN tipo lager lata",
+    "Unnamed: 3": 19800,
+    "Unnamed: 4": 1860,
+    "Unnamed: 5": 0.05,
+    "Unnamed: 6": 93,
+    "Unnamed: 7": 212.90322580645162
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Cerveza BUDWEISER lata x24und",
+    "Unnamed: 3": 72700,
+    "Unnamed: 4": 6456,
+    "Unnamed: 5": 0.05,
+    "Unnamed: 6": 322.8,
+    "Unnamed: 7": 225.2168525402726
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Aguardiente ANTIOQUENO azul sin azúcar media",
+    "Unnamed: 3": 24900,
+    "Unnamed: 4": 375,
+    "Unnamed: 5": 0.29,
+    "Unnamed: 6": 108.74999999999999,
+    "Unnamed: 7": 228.96551724137933
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Whisky JOHNNIE WALKER. red label 8 Años",
+    "Unnamed: 3": 99900,
+    "Unnamed: 4": 1000,
+    "Unnamed: 5": 0.4,
+    "Unnamed: 6": 400,
+    "Unnamed: 7": 249.75
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Vodka SMIRNOFF x1 lulo",
+    "Unnamed: 3": 49000,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.25,
+    "Unnamed: 6": 187.5,
+    "Unnamed: 7": 261.3333333333333
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Cerveza Six Pack lata POKER",
+    "Unnamed: 3": 21000,
+    "Unnamed: 4": 1980,
+    "Unnamed: 5": 0.04,
+    "Unnamed: 6": 79.2,
+    "Unnamed: 7": 265.1515151515151
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Cerveza Lata Sixpack AGUILA",
+    "Unnamed: 3": 21000,
+    "Unnamed: 4": 1980,
+    "Unnamed: 5": 0.04,
+    "Unnamed: 6": 79.2,
+    "Unnamed: 7": 265.1515151515151
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Vodka SMIRNOFF licor sabor a tamarindo picante",
+    "Unnamed: 3": 50000,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.25,
+    "Unnamed: 6": 187.5,
+    "Unnamed: 7": 266.6666666666667
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Cerveza REDDS lata x6und",
+    "Unnamed: 3": 19450,
+    "Unnamed: 4": 1614,
+    "Unnamed: 5": 0.045,
+    "Unnamed: 6": 72.63,
+    "Unnamed: 7": 267.7956767176098
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Whisky BALLANTINES finest blended",
+    "Unnamed: 3": 75100,
+    "Unnamed: 4": 700,
+    "Unnamed: 5": 0.4,
+    "Unnamed: 6": 280,
+    "Unnamed: 7": 268.2142857142857
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Cerveza REDDS rosé x6und",
+    "Unnamed: 3": 21950,
+    "Unnamed: 4": 1614,
+    "Unnamed: 5": 0.05,
+    "Unnamed: 6": 80.7,
+    "Unnamed: 7": 271.99504337050803
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Aguardiente De manzanares sin azúcar media",
+    "Unnamed: 3": 24700,
+    "Unnamed: 4": 375,
+    "Unnamed: 5": 0.24,
+    "Unnamed: 6": 90,
+    "Unnamed: 7": 274.44444444444446
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Cerveza CORONA lata x6und",
+    "Unnamed: 3": 20400,
+    "Unnamed: 4": 1614,
+    "Unnamed: 5": 0.045,
+    "Unnamed: 6": 72.63,
+    "Unnamed: 7": 280.8756712102437
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Aguardiente amarillo",
+    "Unnamed: 3": 67500,
+    "Unnamed: 4": 1000,
+    "Unnamed: 5": 0.24,
+    "Unnamed: 6": 240,
+    "Unnamed: 7": 281.25
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Cerveza CORONA botella x6und",
+    "Unnamed: 3": 25600,
+    "Unnamed: 4": 1980,
+    "Unnamed: 5": 0.045,
+    "Unnamed: 6": 89.1,
+    "Unnamed: 7": 287.317620650954
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Cerveza Light Sixpack AGUILA LIGHT",
+    "Unnamed: 3": 20100,
+    "Unnamed: 4": 1980,
+    "Unnamed: 5": 0.034,
+    "Unnamed: 6": 67.32000000000001,
+    "Unnamed: 7": 298.57397504456327
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Ron MEDELLIN extra añejo 8 años",
+    "Unnamed: 3": 82800,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.35,
+    "Unnamed: 6": 262.5,
+    "Unnamed: 7": 315.42857142857144
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "FOUR LOKO",
+    "Unnamed: 3": 18000,
+    "Unnamed: 4": 473,
+    "Unnamed: 5": 0.12,
+    "Unnamed: 6": 56.76,
+    "Unnamed: 7": 317.1247357293869
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Vodka SMIRNOFF no.21 red",
+    "Unnamed: 3": 92800,
+    "Unnamed: 4": 700,
+    "Unnamed: 5": 0.4,
+    "Unnamed: 6": 280,
+    "Unnamed: 7": 331.42857142857144
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Tequila Blanco JIMADOR 100% Agave",
+    "Unnamed: 3": 112400,
+    "Unnamed: 4": 700,
+    "Unnamed: 5": 0.35,
+    "Unnamed: 6": 244.99999999999997,
+    "Unnamed: 7": 458.7755102040817
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Whisky JACK DANIELS Old No. 7 Thennessee Sour Mash",
+    "Unnamed: 3": 129800,
+    "Unnamed: 4": 700,
+    "Unnamed: 5": 0.4,
+    "Unnamed: 6": 280,
+    "Unnamed: 7": 463.57142857142856
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Whisky OLD PARR 12 años",
+    "Unnamed: 3": 193000,
+    "Unnamed: 4": 1000,
+    "Unnamed: 5": 0.4,
+    "Unnamed: 6": 400,
+    "Unnamed: 7": 482.5
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Whisky OLD PARR 12 años",
+    "Unnamed: 3": 149900,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.4,
+    "Unnamed: 6": 300,
+    "Unnamed: 7": 499.6666666666667
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Licor de hierbas JAGERMEISTER botella",
+    "Unnamed: 3": 122500,
+    "Unnamed: 4": 700,
+    "Unnamed: 5": 0.35,
+    "Unnamed: 6": 244.99999999999997,
+    "Unnamed: 7": 500.00000000000006
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Whisky JOHNNIE WALKER. black label 12 Años",
+    "Unnamed: 3": 157000,
+    "Unnamed: 4": 700,
+    "Unnamed: 5": 0.4,
+    "Unnamed: 6": 280,
+    "Unnamed: 7": 560.7142857142857
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Whisky BUCHANAN S deluxe 12 Años",
+    "Unnamed: 3": 175900,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.4,
+    "Unnamed: 6": 300,
+    "Unnamed: 7": 586.3333333333334
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Whisky BUCHANAN S master",
+    "Unnamed: 3": 242900,
+    "Unnamed: 4": 1000,
+    "Unnamed: 5": 0.4,
+    "Unnamed: 6": 400,
+    "Unnamed: 7": 607.25
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Coctel SMIRNOFF ice green apple x4und en lata",
+    "Unnamed: 3": 25600,
+    "Unnamed: 4": 1000,
+    "Unnamed: 5": 0.04,
+    "Unnamed: 6": 40,
+    "Unnamed: 7": 640
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Whisky JOHNNIE WALKER. double black",
+    "Unnamed: 3": 193000,
+    "Unnamed: 4": 700,
+    "Unnamed: 5": 0.4,
+    "Unnamed: 6": 280,
+    "Unnamed: 7": 689.2857142857143
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Vino espumoso CINZANO pro spritz Otra Cepa",
+    "Unnamed: 3": 60800,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.115,
+    "Unnamed: 6": 86.25,
+    "Unnamed: 7": 704.927536231884
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Coctel SMIRNOFF ice green apple x4und en botella",
+    "Unnamed: 3": 32300,
+    "Unnamed: 4": 1100,
+    "Unnamed: 5": 0.04,
+    "Unnamed: 6": 44,
+    "Unnamed: 7": 734.0909090909091
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Vino Blanco MARQUES DE RISCAL Rueda Verdejo",
+    "Unnamed: 3": 84060,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.14,
+    "Unnamed: 6": 105.00000000000001,
+    "Unnamed: 7": 800.5714285714284
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Whisky JOHNNIE WALKER. gold reserve",
+    "Unnamed: 3": 260000,
+    "Unnamed: 4": 700,
+    "Unnamed: 5": 0.4,
+    "Unnamed: 6": 280,
+    "Unnamed: 7": 928.5714285714286
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Vino Rosado JP CHENET Espumoso Ice Edition Blend",
+    "Unnamed: 3": 70500,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.1,
+    "Unnamed: 6": 75,
+    "Unnamed: 7": 940
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Vino Blanco JP CHENET Espumoso Ice Edition Chardonnay",
+    "Unnamed: 3": 70500,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.1,
+    "Unnamed: 6": 75,
+    "Unnamed: 7": 940
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Tequila DON JULIO reposado",
+    "Unnamed: 3": 287900,
+    "Unnamed: 4": 700,
+    "Unnamed: 5": 0.38,
+    "Unnamed: 6": 266,
+    "Unnamed: 7": 1082.3308270676691
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Whisky JOHNNIE WALKER. 18 años 18 Años",
+    "Unnamed: 3": 417000,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.4,
+    "Unnamed: 6": 300,
+    "Unnamed: 7": 1390
+  },
+  {
+    "Unnamed: 0": NaN,
+    "Unnamed: 1": NaN,
+    "Unnamed: 2": "Whisky JOHNNIE WALKER. blue label",
+    "Unnamed: 3": 1180500,
+    "Unnamed: 4": 750,
+    "Unnamed: 5": 0.4,
+    "Unnamed: 6": 300,
+    "Unnamed: 7": 3935
+  }
+]

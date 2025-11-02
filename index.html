@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AlcoholxPeso</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>AlcoholxPeso</h1>
-  <div class="search-container">
-    <input type="text" id="buscador" placeholder="🔍 Buscar bebida...">
-  </div>
-  <table id="tablaAlcoholes">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>% Alcohol</th>
-        <th>Precio (COP)</th>
-        <th>Volumen (ml)</th>
-        <th>Alcohol puro (ml)</th>
-        <th>Alcohol por peso (ml/100g)</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <header>
+    <h1>AlcoholxPeso</h1>
+    <input id="buscador" type="text" placeholder="Buscar alcohol..." />
+  </header>
+
+  <main id="contenedor"></main>
+
+  <footer>
+    <p>© 2025 AlcoholxPeso</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
