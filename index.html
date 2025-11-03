@@ -17,22 +17,64 @@
       padding: 0;
       color: #333;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
+    /* ===================== ENCABEZADO ANIMADO ===================== */
     header {
+      position: relative;
       background: linear-gradient(90deg, #43a047, #66bb6a);
       color: white;
       text-align: center;
-      padding: 25px 10px;
+      padding: 50px 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
     }
 
     header h1 {
       margin: 0;
-      font-size: 28px;
+      font-size: 32px;
       letter-spacing: 1px;
+      position: relative;
+      z-index: 2;
     }
 
+    /* Botellas flotantes */
+    .botella {
+      position: absolute;
+      top: 0;
+      left: var(--x);
+      width: 90px;
+      height: 90px;
+      background: url('botella_tapa_azul.png') no-repeat center/contain;
+      opacity: 0.75;
+      animation: flotar var(--dur) ease-in-out infinite;
+      z-index: 1;
+    }
+
+    @keyframes flotar {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(20px) rotate(4deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 24px;
+      }
+      .botella {
+        width: 65px;
+        height: 65px;
+      }
+    }
+
+    /* ===================== BUSCADOR ===================== */
     .buscador {
       display: flex;
       flex-wrap: wrap;
@@ -61,6 +103,7 @@
       transform: scale(1.02);
     }
 
+    /* ===================== TABLA ===================== */
     .tabla-container {
       overflow-x: auto;
       background-color: white;
@@ -68,7 +111,6 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       width: 90%;
       margin: 0 auto 40px;
-      transition: all 0.3s ease;
       overflow-y: hidden;
     }
 
@@ -119,7 +161,6 @@
       transition: background-color 0.2s ease;
     }
 
-    /* Animación sutil al cargar filas */
     tbody tr {
       opacity: 0;
       transform: translateY(10px);
@@ -134,15 +175,6 @@
     }
 
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 22px;
-      }
-
-      .buscador {
-        flex-direction: column;
-        align-items: center;
-      }
-
       table {
         font-size: 14px;
         min-width: 600px;
@@ -163,6 +195,11 @@
 </head>
 <body>
   <header>
+    <div class="botella" style="--x:10%; --dur:23s;"></div>
+    <div class="botella" style="--x:30%; --dur:26s;"></div>
+    <div class="botella" style="--x:50%; --dur:28s;"></div>
+    <div class="botella" style="--x:70%; --dur:25s;"></div>
+    <div class="botella" style="--x:90%; --dur:27s;"></div>
     <h1>🍸 Lista de Alcoholes</h1>
   </header>
 
@@ -192,7 +229,6 @@
     let alcoholes = [];
     let ordenAsc = true;
 
-    // Cargar el JSON
     fetch('alcoholes.json')
       .then(response => response.json())
       .then(data => {
@@ -243,7 +279,6 @@
       });
     }
 
-    // Ordenar columnas
     document.querySelectorAll('th').forEach(th => {
       th.addEventListener('click', () => {
         const columna = th.getAttribute('data-col');
