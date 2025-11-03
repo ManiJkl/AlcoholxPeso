@@ -6,71 +6,156 @@
   <title>Lista de Alcoholes</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      color-scheme: light dark;
+    }
+
     * {
       box-sizing: border-box;
     }
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
       margin: 0;
       padding: 0;
-      color: #333;
-      min-height: 100vh;
+      transition: background-color 0.4s, color 0.4s;
+      color: #f0f0f0;
+      background: linear-gradient(160deg, #0a1814, #12211c);
       overflow-x: hidden;
     }
 
-    /* ===================== ENCABEZADO ANIMADO ===================== */
+    body.light {
+      color: #222;
+      background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    }
+
+    /* ===================== HERO ===================== */
     header {
       position: relative;
-      background: linear-gradient(90deg, #43a047, #66bb6a);
+      height: 100vh;
+      background: linear-gradient(160deg, #091713, #0f261e, #1c3a2d);
       color: white;
-      text-align: center;
-      padding: 50px 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       overflow: hidden;
+      text-align: center;
+    }
+
+    body.light header {
+      background: linear-gradient(160deg, #4caf50, #2e7d32);
     }
 
     header h1 {
-      margin: 0;
-      font-size: 32px;
+      font-size: 48px;
+      font-weight: 700;
       letter-spacing: 1px;
-      position: relative;
+      z-index: 2;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    header p {
+      font-size: 20px;
+      margin-top: 10px;
+      opacity: 0.9;
       z-index: 2;
     }
 
-    /* Botellas flotantes */
+    /* Botón modo oscuro */
+    #modo-btn {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      background: transparent;
+      border: 2px solid white;
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      color: white;
+      transition: background 0.3s, transform 0.3s;
+      z-index: 10;
+    }
+
+    #modo-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(20deg);
+    }
+
+    body.light #modo-btn {
+      color: #222;
+      border-color: #222;
+    }
+
+    /* Botellas grandes y animadas */
     .botella {
       position: absolute;
-      top: 0;
-      left: var(--x);
-      width: 90px;
-      height: 90px;
+      width: 280px;
+      height: 550px;
       background: url('botella_tapa_azul.png') no-repeat center/contain;
-      opacity: 0.75;
-      animation: flotar var(--dur) ease-in-out infinite;
-      z-index: 1;
+      opacity: 0.9;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
+      animation: flotar var(--dur) ease-in-out infinite alternate;
+    }
+
+    .botella.izquierda {
+      left: 6%;
+      top: 15%;
+      transform: rotate(-10deg);
+      --dur: 8s;
+    }
+
+    .botella.derecha {
+      right: 6%;
+      top: 20%;
+      transform: rotate(10deg);
+      --dur: 10s;
     }
 
     @keyframes flotar {
-      0% {
-        transform: translateY(0) rotate(0deg);
+      from {
+        transform: translateY(0) rotate(var(--rot, 0deg));
       }
-      50% {
-        transform: translateY(20px) rotate(4deg);
-      }
-      100% {
-        transform: translateY(0) rotate(0deg);
+      to {
+        transform: translateY(-40px) rotate(calc(var(--rot, 0deg) + 6deg));
       }
     }
 
+    /* ===================== RESPONSIVIDAD ===================== */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 24px;
+      header {
+        flex-direction: column;
+        text-align: center;
       }
+
+      header h1 {
+        font-size: 34px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
       .botella {
-        width: 65px;
-        height: 65px;
+        width: 170px;
+        height: 340px;
+        opacity: 0.95;
+      }
+
+      .botella.izquierda {
+        position: relative;
+        top: 5%;
+        left: auto;
+        margin-bottom: 20px;
+      }
+
+      .botella.derecha {
+        position: relative;
+        top: auto;
+        bottom: 5%;
+        left: auto;
+        margin-top: 20px;
       }
     }
 
@@ -80,7 +165,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
-      margin: 25px auto;
+      margin: 40px auto;
       padding: 0 15px;
       max-width: 900px;
     }
@@ -94,6 +179,7 @@
       font-size: 16px;
       transition: all 0.25s ease;
       background-color: white;
+      color: #222;
     }
 
     input:focus {
@@ -106,12 +192,17 @@
     /* ===================== TABLA ===================== */
     .tabla-container {
       overflow-x: auto;
-      background-color: white;
+      background-color: #1b1b1b;
       border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
       width: 90%;
       margin: 0 auto 40px;
       overflow-y: hidden;
+    }
+
+    body.light .tabla-container {
+      background-color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
     table {
@@ -121,14 +212,20 @@
     }
 
     th, td {
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid #2a2a2a;
       padding: 12px 10px;
       text-align: center;
       font-size: 15px;
+      color: #f1f1f1;
+    }
+
+    body.light th, body.light td {
+      color: #333;
+      border-bottom: 1px solid #e0e0e0;
     }
 
     th {
-      background-color: #4caf50;
+      background-color: #0f2f24;
       color: white;
       font-weight: 600;
       cursor: pointer;
@@ -137,7 +234,15 @@
     }
 
     th:hover {
-      background-color: #43a047;
+      background-color: #145a3d;
+    }
+
+    body.light th {
+      background-color: #2e7d32;
+    }
+
+    body.light th:hover {
+      background-color: #388e3c;
     }
 
     th::after {
@@ -148,17 +253,20 @@
     }
 
     tr:nth-child(even) {
-      background-color: #f9f9f9;
+      background-color: #1f1f1f;
     }
 
     tr:hover {
-      background-color: #e8f5e9;
-      transform: scale(1.01);
-      transition: all 0.2s ease;
+      background-color: #26332c;
+      transition: all 0.3s ease;
     }
 
-    td {
-      transition: background-color 0.2s ease;
+    body.light tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    body.light tr:hover {
+      background-color: #e8f5e9;
     }
 
     tbody tr {
@@ -174,33 +282,15 @@
       }
     }
 
-    @media (max-width: 768px) {
-      table {
-        font-size: 14px;
-        min-width: 600px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      th, td {
-        font-size: 13px;
-        padding: 8px;
-      }
-
-      header h1 {
-        font-size: 20px;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
-    <div class="botella" style="--x:10%; --dur:23s;"></div>
-    <div class="botella" style="--x:30%; --dur:26s;"></div>
-    <div class="botella" style="--x:50%; --dur:28s;"></div>
-    <div class="botella" style="--x:70%; --dur:25s;"></div>
-    <div class="botella" style="--x:90%; --dur:27s;"></div>
-    <h1>🍸 Lista de Alcoholes</h1>
+    <button id="modo-btn" aria-label="Cambiar tema">🌓</button>
+    <div class="botella izquierda" style="--rot:-8deg;"></div>
+    <h1>Lista de Alcoholes</h1>
+    <p>Explora, compara y descubre tu bebida favorita</p>
+    <div class="botella derecha" style="--rot:10deg;"></div>
   </header>
 
   <div class="buscador">
@@ -226,6 +316,17 @@
   </div>
 
   <script>
+    // ====== MODO OSCURO / CLARO ======
+    const btn = document.getElementById("modo-btn");
+    const preferidoOscuro = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (!preferidoOscuro) {
+      document.body.classList.add("light");
+    }
+    btn.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+    });
+
+    // ====== TABLA DE ALCOHOLES ======
     let alcoholes = [];
     let ordenAsc = true;
 
