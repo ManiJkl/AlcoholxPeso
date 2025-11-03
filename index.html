@@ -18,10 +18,10 @@
       font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
-      transition: background-color 0.4s, color 0.4s;
       color: #f0f0f0;
       background: linear-gradient(160deg, #0a1814, #12211c);
       overflow-x: hidden;
+      transition: background-color 0.4s, color 0.4s;
     }
 
     body.light {
@@ -39,8 +39,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
       text-align: center;
+      overflow: hidden;
     }
 
     body.light header {
@@ -48,15 +48,16 @@
     }
 
     header h1 {
-      font-size: 48px;
+      font-size: 10vw;
       font-weight: 700;
       letter-spacing: 1px;
-      z-index: 2;
       text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      margin: 0;
+      z-index: 2;
     }
 
     header p {
-      font-size: 20px;
+      font-size: 1.5rem;
       margin-top: 10px;
       opacity: 0.9;
       z-index: 2;
@@ -88,74 +89,78 @@
       border-color: #222;
     }
 
-    /* Botellas grandes y animadas */
+    /* ===================== BOTELLAS ===================== */
     .botella {
       position: absolute;
-      width: 280px;
-      height: 550px;
-      background: url('botella_tapa_azul.png') no-repeat center/contain;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
       opacity: 0.9;
+      width: clamp(140px, 18vw, 260px);
+      height: clamp(300px, 45vh, 500px);
       filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
-      animation: flotar var(--dur) ease-in-out infinite alternate;
+      animation: flotar var(--dur) ease-in-out infinite alternate,
+                 rotar 12s ease-in-out infinite alternate;
+      z-index: 1;
     }
 
-    .botella.izquierda {
-      left: 6%;
-      top: 15%;
-      transform: rotate(-10deg);
-      --dur: 8s;
-    }
-
-    .botella.derecha {
-      right: 6%;
-      top: 20%;
-      transform: rotate(10deg);
-      --dur: 10s;
-    }
+    .botella.izquierda { left: 8%; top: 20%; --dur: 8s; }
+    .botella.derecha { right: 8%; top: 22%; --dur: 10s; }
+    .botella.extra1 { left: 25%; bottom: 10%; --dur: 11s; }
+    .botella.extra2 { right: 25%; bottom: 8%; --dur: 12s; }
+    .botella.extra3 { left: 40%; top: 10%; --dur: 9s; }
+    .botella.extra4 { right: 40%; top: 5%; --dur: 13s; }
 
     @keyframes flotar {
-      from {
-        transform: translateY(0) rotate(var(--rot, 0deg));
-      }
-      to {
-        transform: translateY(-40px) rotate(calc(var(--rot, 0deg) + 6deg));
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-40px); }
+    }
+
+    @keyframes rotar {
+      0% { transform: rotate(-4deg); }
+      50% { transform: rotate(4deg); }
+      100% { transform: rotate(-4deg); }
     }
 
     /* ===================== RESPONSIVIDAD ===================== */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
+    @media (max-width: 1024px) {
+      .botella.extra3, .botella.extra4 {
+        display: none;
       }
+    }
 
+    @media (max-width: 768px) {
       header h1 {
-        font-size: 34px;
+        font-size: 14vw;
       }
 
       header p {
-        font-size: 16px;
+        font-size: 4vw;
       }
 
       .botella {
-        width: 170px;
-        height: 340px;
-        opacity: 0.95;
+        width: 30vw;
+        height: 45vh;
+        position: relative;
+        margin: 10px auto;
+        display: inline-block;
+        animation: none;
+        transform: none;
       }
 
-      .botella.izquierda {
-        position: relative;
-        top: 5%;
-        left: auto;
-        margin-bottom: 20px;
+      header {
+        padding-top: 60px;
       }
 
-      .botella.derecha {
-        position: relative;
-        top: auto;
-        bottom: 5%;
-        left: auto;
-        margin-top: 20px;
+      .botella.izquierda, .botella.derecha,
+      .botella.extra1, .botella.extra2 {
+        position: static;
+        display: block;
+      }
+
+      /* Ocultar las extras en pantallas muy pequeñas */
+      .botella.extra3, .botella.extra4 {
+        display: none;
       }
     }
 
@@ -177,9 +182,9 @@
       border: 1px solid #cfd8dc;
       border-radius: 10px;
       font-size: 16px;
-      transition: all 0.25s ease;
       background-color: white;
       color: #222;
+      transition: all 0.25s ease;
     }
 
     input:focus {
@@ -192,12 +197,12 @@
     /* ===================== TABLA ===================== */
     .tabla-container {
       overflow-x: auto;
+      overflow-y: hidden;
       background-color: #1b1b1b;
       border-radius: 14px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
       width: 90%;
       margin: 0 auto 40px;
-      overflow-y: hidden;
     }
 
     body.light .tabla-container {
@@ -229,7 +234,6 @@
       color: white;
       font-weight: 600;
       cursor: pointer;
-      position: relative;
       transition: background-color 0.3s ease;
     }
 
@@ -281,22 +285,28 @@
         transform: translateY(0);
       }
     }
-
   </style>
 </head>
 <body>
   <header>
-    <button id="modo-btn" aria-label="Cambiar tema">🌓</button>
-    <div class="botella izquierda" style="--rot:-8deg;"></div>
+    <button id="modo-btn" aria-label="Cambiar tema">🌗</button>
+
+    <!-- Botellas -->
+    <div class="botella izquierda" style="background-image:url('botella_tapa_azul.png')"></div>
+    <div class="botella derecha" style="background-image:url('botella1.png')"></div>
+    <div class="botella extra1" style="background-image:url('botella2.png')"></div>
+    <div class="botella extra2" style="background-image:url('botella3.png')"></div>
+    <div class="botella extra3" style="background-image:url('botella4.png')"></div>
+    <div class="botella extra4" style="background-image:url('botella5.png')"></div>
+
     <h1>Lista de Alcoholes</h1>
     <p>Explora, compara y descubre tu bebida favorita</p>
-    <div class="botella derecha" style="--rot:10deg;"></div>
   </header>
 
   <div class="buscador">
-    <input type="text" id="buscar" placeholder="🔍 Buscar por nombre...">
-    <input type="number" id="precioMin" placeholder="💰 Precio mínimo">
-    <input type="number" id="precioMax" placeholder="💵 Precio máximo">
+    <input type="text" id="buscar" placeholder="Buscar por nombre...">
+    <input type="number" id="precioMin" placeholder="Precio mínimo">
+    <input type="number" id="precioMax" placeholder="Precio máximo">
   </div>
 
   <div class="tabla-container">
@@ -316,7 +326,6 @@
   </div>
 
   <script>
-    // ====== MODO OSCURO / CLARO ======
     const btn = document.getElementById("modo-btn");
     const preferidoOscuro = window.matchMedia("(prefers-color-scheme: dark)").matches;
     if (!preferidoOscuro) {
@@ -326,7 +335,6 @@
       document.body.classList.toggle("light");
     });
 
-    // ====== TABLA DE ALCOHOLES ======
     let alcoholes = [];
     let ordenAsc = true;
 
