@@ -1,0 +1,370 @@
+[
+  {
+    "Nombre": "Aguardiente ANTIOQUENO azul sin azúcar en caja",
+    "Precio": "$ 48.650,00",
+    "Cantidad (ml)": 1050,
+    "Porcentaje": "29,0%",
+    "Alcohol ml": "304,50",
+    "cop x ml alcohol": "$ 159,77"
+  },
+  {
+    "Nombre": "Aguardiente ANTIOQUENO verde sin azúcar caja",
+    "Precio": "$ 43.100,00",
+    "Cantidad (ml)": 1050,
+    "Porcentaje": "24,0%",
+    "Alcohol ml": "252,00",
+    "cop x ml alcohol": "$ 171,03"
+  },
+  {
+    "Nombre": "Aguardiente BLANCO Del Valle fiesta sin azúcar botella",
+    "Precio": "$ 42.100,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "29,0%",
+    "Alcohol ml": "217,50",
+    "cop x ml alcohol": "$ 193,56"
+  },
+  {
+    "Nombre": "Cerveza ANDINA dorada lata x6und",
+    "Precio": "$ 12.550,00",
+    "Cantidad (ml)": 1614,
+    "Porcentaje": "4,0%",
+    "Alcohol ml": "64,56",
+    "cop x ml alcohol": "$ 194,39"
+  },
+  {
+    "Nombre": "Ron blanco BACARDI Sabor limón",
+    "Precio": "$ 52.000,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "35,0%",
+    "Alcohol ml": "262,50",
+    "cop x ml alcohol": "$ 198,10"
+  },
+  {
+    "Nombre": "Aguardiente ANTIOQUENO verde sin azúcar garrafa",
+    "Precio": "$ 86.200,00",
+    "Cantidad (ml)": 1750,
+    "Porcentaje": "24,0%",
+    "Alcohol ml": "420,00",
+    "cop x ml alcohol": "$ 205,24"
+  },
+  {
+    "Nombre": "Ron VIEJO DE CALDAS Tradicional",
+    "Precio": "$ 55.000,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "35,0%",
+    "Alcohol ml": "262,50",
+    "cop x ml alcohol": "$ 209,52"
+  },
+  {
+    "Nombre": "Vino Tinto CRUZARES MARCA EXCLUSIVA",
+    "Precio": "$ 16.940,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "10,7%",
+    "Alcohol ml": "80,10",
+    "cop x ml alcohol": "$ 211,49"
+  },
+  {
+    "Nombre": "Cerveza HEINEKEN tipo lager lata",
+    "Precio": "$ 19.800,00",
+    "Cantidad (ml)": 1860,
+    "Porcentaje": "5,0%",
+    "Alcohol ml": "93,00",
+    "cop x ml alcohol": "$ 212,90"
+  },
+  {
+    "Nombre": "Cerveza BUDWEISER lata x24und",
+    "Precio": "$ 72.700,00",
+    "Cantidad (ml)": 6456,
+    "Porcentaje": "5,0%",
+    "Alcohol ml": "322,80",
+    "cop x ml alcohol": "$ 225,22"
+  },
+  {
+    "Nombre": "Aguardiente ANTIOQUENO azul sin azúcar media",
+    "Precio": "$ 24.900,00",
+    "Cantidad (ml)": 375,
+    "Porcentaje": "29,0%",
+    "Alcohol ml": "108,75",
+    "cop x ml alcohol": "$ 228,97"
+  },
+  {
+    "Nombre": "Whisky JOHNNIE WALKER. red label 8 Años",
+    "Precio": "$ 99.900,00",
+    "Cantidad (ml)": 1000,
+    "Porcentaje": "40,0%",
+    "Alcohol ml": "400,00",
+    "cop x ml alcohol": "$ 249,75"
+  },
+  {
+    "Nombre": "Vodka SMIRNOFF x1 lulo",
+    "Precio": "$ 49.000,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "25,0%",
+    "Alcohol ml": "187,50",
+    "cop x ml alcohol": "$ 261,33"
+  },
+  {
+    "Nombre": "Cerveza Six Pack lata POKER",
+    "Precio": "$ 21.000,00",
+    "Cantidad (ml)": 1980,
+    "Porcentaje": "4,0%",
+    "Alcohol ml": "79,20",
+    "cop x ml alcohol": "$ 265,15"
+  },
+  {
+    "Nombre": "Cerveza Lata Sixpack AGUILA",
+    "Precio": "$ 21.000,00",
+    "Cantidad (ml)": 1980,
+    "Porcentaje": "4,0%",
+    "Alcohol ml": "79,20",
+    "cop x ml alcohol": "$ 265,15"
+  },
+  {
+    "Nombre": "Vodka SMIRNOFF licor sabor a tamarindo picante",
+    "Precio": "$ 50.000,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "25,0%",
+    "Alcohol ml": "187,50",
+    "cop x ml alcohol": "$ 266,67"
+  },
+  {
+    "Nombre": "Cerveza REDDS lata x6und",
+    "Precio": "$ 19.450,00",
+    "Cantidad (ml)": 1614,
+    "Porcentaje": "4,5%",
+    "Alcohol ml": "72,63",
+    "cop x ml alcohol": "$ 267,80"
+  },
+  {
+    "Nombre": "Whisky BALLANTINES finest blended",
+    "Precio": "$ 75.100,00",
+    "Cantidad (ml)": 700,
+    "Porcentaje": "40,0%",
+    "Alcohol ml": "280,00",
+    "cop x ml alcohol": "$ 268,21"
+  },
+  {
+    "Nombre": "Cerveza REDDS rosé x6und",
+    "Precio": "$ 21.950,00",
+    "Cantidad (ml)": 1614,
+    "Porcentaje": "5,0%",
+    "Alcohol ml": "80,70",
+    "cop x ml alcohol": "$ 272,00"
+  },
+  {
+    "Nombre": "Aguardiente De manzanares sin azúcar media",
+    "Precio": "$ 24.700,00",
+    "Cantidad (ml)": 375,
+    "Porcentaje": "24,0%",
+    "Alcohol ml": "90,00",
+    "cop x ml alcohol": "$ 274,44"
+  },
+  {
+    "Nombre": "Cerveza CORONA lata x6und",
+    "Precio": "$ 20.400,00",
+    "Cantidad (ml)": 1614,
+    "Porcentaje": "4,5%",
+    "Alcohol ml": "72,63",
+    "cop x ml alcohol": "$ 280,88"
+  },
+  {
+    "Nombre": "Aguardiente amarillo",
+    "Precio": "$ 67.500,00",
+    "Cantidad (ml)": 1000,
+    "Porcentaje": "24,0%",
+    "Alcohol ml": "240,00",
+    "cop x ml alcohol": "$ 281,25"
+  },
+  {
+    "Nombre": "Cerveza CORONA botella x6und",
+    "Precio": "$ 25.600,00",
+    "Cantidad (ml)": 1980,
+    "Porcentaje": "4,5%",
+    "Alcohol ml": "89,10",
+    "cop x ml alcohol": "$ 287,32"
+  },
+  {
+    "Nombre": "Cerveza Light Sixpack AGUILA LIGHT",
+    "Precio": "$ 20.100,00",
+    "Cantidad (ml)": 1980,
+    "Porcentaje": "3,4%",
+    "Alcohol ml": "67,32",
+    "cop x ml alcohol": "$ 298,57"
+  },
+  {
+    "Nombre": "Ron MEDELLIN extra añejo 8 años",
+    "Precio": "$ 82.800,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "35,0%",
+    "Alcohol ml": "262,50",
+    "cop x ml alcohol": "$ 315,43"
+  },
+  {
+    "Nombre": "FOUR LOKO",
+    "Precio": "$ 18.000,00",
+    "Cantidad (ml)": 473,
+    "Porcentaje": "12,0%",
+    "Alcohol ml": "56,76",
+    "cop x ml alcohol": "$ 317,12"
+  },
+  {
+    "Nombre": "Vodka SMIRNOFF no.21 red",
+    "Precio": "$ 92.800,00",
+    "Cantidad (ml)": 700,
+    "Porcentaje": "40,0%",
+    "Alcohol ml": "280,00",
+    "cop x ml alcohol": "$ 331,43"
+  },
+  {
+    "Nombre": "Tequila Blanco JIMADOR 100% Agave",
+    "Precio": "$ 112.400,00",
+    "Cantidad (ml)": 700,
+    "Porcentaje": "35,0%",
+    "Alcohol ml": "245,00",
+    "cop x ml alcohol": "$ 458,78"
+  },
+  {
+    "Nombre": "Whisky JACK DANIELS Old No. 7 Thennessee Sour Mash",
+    "Precio": "$ 129.800,00",
+    "Cantidad (ml)": 700,
+    "Porcentaje": "40,0%",
+    "Alcohol ml": "280,00",
+    "cop x ml alcohol": "$ 463,57"
+  },
+  {
+    "Nombre": "Whisky OLD PARR 12 años",
+    "Precio": "$ 193.000,00",
+    "Cantidad (ml)": 1000,
+    "Porcentaje": "40,0%",
+    "Alcohol ml": "400,00",
+    "cop x ml alcohol": "$ 482,50"
+  },
+  {
+    "Nombre": "Whisky OLD PARR 12 años",
+    "Precio": "$ 149.900,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "40,0%",
+    "Alcohol ml": "300,00",
+    "cop x ml alcohol": "$ 499,67"
+  },
+  {
+    "Nombre": "Licor de hierbas JAGERMEISTER botella",
+    "Precio": "$ 122.500,00",
+    "Cantidad (ml)": 700,
+    "Porcentaje": "35,0%",
+    "Alcohol ml": "245,00",
+    "cop x ml alcohol": "$ 500,00"
+  },
+  {
+    "Nombre": "Whisky JOHNNIE WALKER. black label 12 Años",
+    "Precio": "$ 157.000,00",
+    "Cantidad (ml)": 700,
+    "Porcentaje": "40,0%",
+    "Alcohol ml": "280,00",
+    "cop x ml alcohol": "$ 560,71"
+  },
+  {
+    "Nombre": "Whisky BUCHANAN S deluxe 12 Años",
+    "Precio": "$ 175.900,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "40,0%",
+    "Alcohol ml": "300,00",
+    "cop x ml alcohol": "$ 586,33"
+  },
+  {
+    "Nombre": "Whisky BUCHANAN S master",
+    "Precio": "$ 242.900,00",
+    "Cantidad (ml)": 1000,
+    "Porcentaje": "40,0%",
+    "Alcohol ml": "400,00",
+    "cop x ml alcohol": "$ 607,25"
+  },
+  {
+    "Nombre": "Coctel SMIRNOFF ice green apple x4und en lata",
+    "Precio": "$ 25.600,00",
+    "Cantidad (ml)": 1000,
+    "Porcentaje": "4,0%",
+    "Alcohol ml": "40,00",
+    "cop x ml alcohol": "$ 640,00"
+  },
+  {
+    "Nombre": "Whisky JOHNNIE WALKER. double black",
+    "Precio": "$ 193.000,00",
+    "Cantidad (ml)": 700,
+    "Porcentaje": "40,0%",
+    "Alcohol ml": "280,00",
+    "cop x ml alcohol": "$ 689,29"
+  },
+  {
+    "Nombre": "Vino espumoso CINZANO pro spritz Otra Cepa",
+    "Precio": "$ 60.800,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "11,5%",
+    "Alcohol ml": "86,25",
+    "cop x ml alcohol": "$ 704,93"
+  },
+  {
+    "Nombre": "Coctel SMIRNOFF ice green apple x4und en botella",
+    "Precio": "$ 32.300,00",
+    "Cantidad (ml)": 1100,
+    "Porcentaje": "4,0%",
+    "Alcohol ml": "44,00",
+    "cop x ml alcohol": "$ 734,09"
+  },
+  {
+    "Nombre": "Vino Blanco MARQUES DE RISCAL Rueda Verdejo",
+    "Precio": "$ 84.060,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "14,0%",
+    "Alcohol ml": "105,00",
+    "cop x ml alcohol": "$ 800,57"
+  },
+  {
+    "Nombre": "Whisky JOHNNIE WALKER. gold reserve",
+    "Precio": "$ 260.000,00",
+    "Cantidad (ml)": 700,
+    "Porcentaje": "40,0%",
+    "Alcohol ml": "280,00",
+    "cop x ml alcohol": "$ 928,57"
+  },
+  {
+    "Nombre": "Vino Rosado JP CHENET Espumoso Ice Edition Blend",
+    "Precio": "$ 70.500,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "10,0%",
+    "Alcohol ml": "75,00",
+    "cop x ml alcohol": "$ 940,00"
+  },
+  {
+    "Nombre": "Vino Blanco JP CHENET Espumoso Ice Edition Chardonnay",
+    "Precio": "$ 70.500,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "10,0%",
+    "Alcohol ml": "75,00",
+    "cop x ml alcohol": "$ 940,00"
+  },
+  {
+    "Nombre": "Tequila DON JULIO reposado",
+    "Precio": "$ 287.900,00",
+    "Cantidad (ml)": 700,
+    "Porcentaje": "38,0%",
+    "Alcohol ml": "266,00",
+    "cop x ml alcohol": "$ 1.082,33"
+  },
+  {
+    "Nombre": "Whisky JOHNNIE WALKER. 18 años 18 Años",
+    "Precio": "$ 417.000,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "40,0%",
+    "Alcohol ml": "300,00",
+    "cop x ml alcohol": "$ 1.390,00"
+  },
+  {
+    "Nombre": "Whisky JOHNNIE WALKER. blue label",
+    "Precio": "$ 1.180.500,00",
+    "Cantidad (ml)": 750,
+    "Porcentaje": "40,0%",
+    "Alcohol ml": "300,00",
+    "cop x ml alcohol": "$ 3.935,00"
+  }
+]
