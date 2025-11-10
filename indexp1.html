@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juego del Presupuesto de Alcohol</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    html,body { height: 100%; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg,#ffecd2 0%,#fcb69f 100%);
+      margin: 0; color: #222;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+
+    header {
+      background-color: #1f1f1f; color: #fff;
+      padding: 20px 12px; text-align:center;
+      font-weight:700; font-size:1.6rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    }
+
+    .topbar {
+      max-width:1100px; margin:18px auto 0; display:flex;
+      gap:12px; align-items:center; justify-content:space-between;
+      padding: 0 16px; flex-wrap: wrap;
+    }
+
+    .info { font-weight:600; font-size:1rem; }
+
+    .presupuesto-badge {
+      background:#fff; padding:10px 14px; border-radius:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08); display:flex; gap:12px; align-items:center;
+    }
+
+    .presupuesto-badge strong { color:#e63946; font-size:1.15rem; }
+
+    .controls { display:flex; gap:8px; align-items:center; flex-wrap: wrap; }
+
+    .controls button, select {
+      background:#222; color:#fff; border:0; padding:8px 12px; border-radius:10px; cursor:pointer;
+      font-weight:700; transition:transform .15s ease, background .15s;
+    }
+    .controls button:hover { transform:translateY(-3px); }
+    .controls .secondary { background:#fff; color:#222; box-shadow:0 6px 14px rgba(0,0,0,0.08); }
+    select { background:#fff; color:#222; font-weight:600; }
+
+    .container {
+      max-width:1100px; margin:22px auto; padding: 0 16px 60px;
+      display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap:22px;
+    }
+
+    .card {
+      background:#fff; border-radius:14px; padding:16px;
+      box-shadow:0 8px 18px rgba(0,0,0,0.08);
+      transition: transform .25s ease, box-shadow .25s ease;
+      display:flex; flex-direction:column; gap:8px; overflow:hidden;
+    }
+    .card:hover { transform:translateY(-6px); box-shadow:0 18px 30px rgba(0,0,0,0.12); }
+
+    .thumb {
+      height:110px; border-radius:10px; background:#f1f1f1;
+      background-size:cover; background-position:center;
+      box-shadow: inset 0 -20px 40px rgba(0,0,0,0.04);
+    }
+
+    .card h3 { font-size:1.05rem; margin:6px 0 0; color:#111; }
+    .card .tipo { font-weight:700; color:#0074D9; font-size:0.9rem; }
+    .meta { color:#555; font-size:0.92rem; margin-top:6px; }
+
+    .meta small { color:#777; display:block; margin-top:6px; font-weight:600; }
+
+    .card .row { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:8px; }
+    .btn-add {
+      background: linear-gradient(90deg,#2b2b2b,#111);
+      color:#fff;border:0;padding:10px 12px;border-radius:10px;cursor:pointer;font-weight:700;
+      transition: transform .12s ease, box-shadow .12s;
+    }
+
+    .btn-add:active { transform:translateY(2px); }
+    .small-muted { color:#6b6b6b; font-size:0.85rem; }
+
+    .resultado-box {
+      max-width:1100px; margin:36px auto; padding:20px; border-radius:14px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.90));
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .resultado-grid {
+      display:grid; grid-template-columns: repeat(4,1fr); gap:12px;
+      align-items:center;
+    }
+
+    .resultado-item {
+      background:#fff; padding:12px; border-radius:10px; text-align:center;
+      box-shadow:0 6px 14px rgba(0,0,0,0.04);
+    }
+
+    .resultado-item h4 { margin:0; font-size:0.9rem; color:#666; font-weight:600; }
+    .resultado-item p { margin:8px 0 0; font-weight:800; font-size:1.05rem; color:#111; }
+
+    .progress-wrap { grid-column: 1 / -1; margin-top:12px; }
+    .progress-bar { height:14px; background:#eee; border-radius:999px; overflow:hidden; }
+    .progress-fill { height:100%; width:0%; background: linear-gradient(90deg,#ff595e,#ff924c); transition: width .5s ease; }
+
+    @media (max-width:900px) {
+      .resultado-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width:520px) {
+      .resultado-grid { grid-template-columns: 1fr; }
+      .thumb { display:none; }
+    }
+
+    .shake { animation: shake .45s; }
+    @keyframes shake {
+      10% { transform: translateX(-6px); } 30% { transform: translateX(6px); }
+      50% { transform: translateX(-4px); } 70% { transform: translateX(4px); }
+      90% { transform: translateX(0); }
+    }
+
+    .badge { font-size:0.78rem; padding:6px 8px;border-radius:8px;background:#f5f5f5;color:#333;font-weight:700; }
+  </style>
+</head>
+<body>
+
+  <header>🍻 Juego del Presupuesto de Alcohol — Mejorado</header>
+
+  <div class="topbar">
+    <div class="info">
+      Presupuesto restante:
+      <span class="presupuesto-badge">
+        <span class="small-muted">COP</span>
+        <strong id="presupuestoVisible">45,000</strong>
+      </span>
+    </div>
+
+    <div class="controls">
+      <select id="filtroTipo">
+        <option value="Todos">🍸 Todos</option>
+      </select>
+      <button id="reiniciar">🔄 Reiniciar</button>
+      <button id="revelarAlcohol" class="secondary">🔍 Revelar alcohol puro</button>
+    </div>
+  </div>
+
+  <div class="container" id="bebidas"></div>
+
+  <div class="resultado-box" aria-live="polite">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h3 style="margin:0">Resumen de tu compra</h3>
+      <div class="badge">Presupuesto inicial: $<span id="presupuestoInicial">45000</span></div>
+    </div>
+
+    <div class="resultado-grid" style="margin-top:14px;">
+      <div class="resultado-item"><h4>Total gastado</h4><p>$<span id="gastado">0</span></p></div>
+      <div class="resultado-item"><h4>Presupuesto restante</h4><p>$<span id="restante">45000</span></p></div>
+      <div class="resultado-item"><h4>Alcohol puro (ml)</h4><p id="alcoholMask">•••</p></div>
+      <div class="resultado-item"><h4>% Presupuesto usado</h4><p><span id="porcentaje">0</span>%</p></div>
+
+      <div class="progress-wrap"><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div></div>
+    </div>
+  </div>
+
+  <script>
+    const contenedor = document.getElementById('bebidas');
+    const presupuestoVisible = document.getElementById('presupuestoVisible');
+    const presupuestoInicialEl = document.getElementById('presupuestoInicial');
+    const gastadoEl = document.getElementById('gastado');
+    const restanteEl = document.getElementById('restante');
+    const alcoholMask = document.getElementById('alcoholMask');
+    const porcentajeEl = document.getElementById('porcentaje');
+    const progressFill = document.getElementById('progressFill');
+    const reiniciarBtn = document.getElementById('reiniciar');
+    const revelarBtn = document.getElementById('revelarAlcohol');
+    const filtroTipo = document.getElementById('filtroTipo');
+
+    const initialPresupuesto = 45000;
+    let presupuesto = initialPresupuesto;
+    let gastado = 0;
+    let alcoholTotal = 0;
+    let alcoholRevelado = false;
+    let bebidasData = [];
+
+    const formatoCOP = n => Number(n).toLocaleString('es-CO', { maximumFractionDigits: 0 });
+    const formatoDecimal = (n, d=2) => Number(n).toFixed(d);
+
+    function actualizarAlcoholVisible() {
+      if (alcoholRevelado) {
+        alcoholMask.textContent = formatoDecimal(alcoholTotal, 2) + ' ml';
+        revelarBtn.textContent = '🙈 Ocultar alcohol puro';
+      } else {
+        alcoholMask.textContent = '•••';
+        revelarBtn.textContent = '🔍 Revelar alcohol puro';
+      }
+    }
+
+    function actualizarUI() {
+      const restante = presupuesto - gastado;
+      const porcentaje = (gastado / initialPresupuesto) * 100;
+      presupuestoVisible.textContent = formatoCOP(Math.max(0, restante));
+      presupuestoInicialEl.textContent = formatoCOP(initialPresupuesto);
+      gastadoEl.textContent = formatoCOP(gastado);
+      restanteEl.textContent = formatoCOP(Math.max(0, restante));
+      porcentajeEl.textContent = Math.round(porcentaje);
+      progressFill.style.width = porcentaje + '%';
+      actualizarAlcoholVisible();
+    }
+
+    function reiniciarJuego() {
+      presupuesto = initialPresupuesto;
+      gastado = 0;
+      alcoholTotal = 0;
+      alcoholRevelado = false;
+      actualizarUI();
+    }
+
+    reiniciarBtn.addEventListener('click', reiniciarJuego);
+    revelarBtn.addEventListener('click', () => { alcoholRevelado = !alcoholRevelado; actualizarAlcoholVisible(); });
+
+    fetch('alcoholes.json')
+      .then(r => r.json())
+      .then(datos => {
+        bebidasData = datos;
+        llenarFiltro(datos);
+        renderBebidas(datos);
+        actualizarUI();
+      });
+
+    function llenarFiltro(datos) {
+      const tipos = [...new Set(datos.map(b => b.Tipo))];
+      tipos.forEach(tipo => {
+        const opt = document.createElement('option');
+        opt.value = tipo;
+        opt.textContent = tipo;
+        filtroTipo.appendChild(opt);
+      });
+      filtroTipo.addEventListener('change', () => {
+        const tipo = filtroTipo.value;
+        renderBebidas(tipo === 'Todos' ? bebidasData : bebidasData.filter(b => b.Tipo === tipo));
+      });
+    }
+
+    function renderBebidas(bebidas) {
+      contenedor.innerHTML = '';
+      bebidas.forEach(b => {
+        const precioNum = parsePrecio(b['Precio']);
+        const cantidad = parseFloat(b['Cantidad (ml)']) || 0;
+        const porcentajeAlcohol = parseFloat(b['Porcentaje'].replace('%','').replace(',','.')) || 0;
+        const alcoholMl = cantidad * (porcentajeAlcohol/100);
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="thumb" style="${b.imagen ? "background-image:url('"+b.imagen+"');" : ""}"></div>
+          <h3>${b.Nombre}</h3>
+          <div class="tipo">${b.Tipo}</div>
+          <div class="meta">
+            <div>💰 <strong>${b.Precio}</strong></div>
+            <small>📦 ${b['Cantidad (ml)']} ml • 🍷 ${b['Porcentaje']} • 🔥 ${formatoDecimal(alcoholMl)} ml alcohol puro</small>
+          </div>
+          <div class="row"><div class="small-muted">COP ${formatoCOP(precioNum)}</div>
+          <button class="btn-add">Agregar</button></div>
+        `;
+        card.querySelector('.btn-add').onclick = () => comprar(precioNum, alcoholMl, card);
+        contenedor.appendChild(card);
+      });
+    }
+
+    function comprar(precio, alcoholMl, cardEl) {
+      if (gastado + precio > presupuesto) {
+        cardEl.classList.remove('shake'); void cardEl.offsetWidth; cardEl.classList.add('shake');
+        return;
+      }
+      gastado += precio;
+      alcoholTotal += alcoholMl;
+      actualizarUI();
+    }
+
+    function parsePrecio(valor) {
+      let s = String(valor).replace(/[^0-9.,]/g, '');
+      if (s.includes('.') && s.includes(',')) s = s.replace(/\./g,'').replace(',', '.');
+      else if (s.includes(',')) s = s.replace(',', '.');
+      else s = s.replace(/\./g,'');
+      const n = parseFloat(s);
+      return isNaN(n) ? 0 : n;
+    }
+
+    actualizarUI();
+  </script>
+</body>
+</html>
