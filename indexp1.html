@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Juego del Presupuesto de Alcohol</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
   <style>
     * { box-sizing: border-box; }
     html,body { height: 100%; }
@@ -13,7 +12,6 @@
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(135deg,#ffecd2 0%,#fcb69f 100%);
       margin: 0; color: #222;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
 
     header {
@@ -40,13 +38,21 @@
 
     .controls { display:flex; gap:8px; align-items:center; flex-wrap: wrap; }
 
-    .controls button, select {
-      background:#222; color:#fff; border:0; padding:8px 12px; border-radius:10px; cursor:pointer;
+    .controls button, select, input {
+      border:0; border-radius:10px; cursor:pointer;
       font-weight:700; transition:transform .15s ease, background .15s;
+    }
+
+    .controls button {
+      background:#222; color:#fff; padding:8px 12px;
     }
     .controls button:hover { transform:translateY(-3px); }
     .controls .secondary { background:#fff; color:#222; box-shadow:0 6px 14px rgba(0,0,0,0.08); }
-    select { background:#fff; color:#222; font-weight:600; }
+
+    select, input {
+      background:#fff; color:#222; font-weight:600; padding:8px 12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    }
 
     .container {
       max-width:1100px; margin:22px auto; padding: 0 16px 60px;
@@ -71,7 +77,6 @@
     .card h3 { font-size:1.05rem; margin:6px 0 0; color:#111; }
     .card .tipo { font-weight:700; color:#0074D9; font-size:0.9rem; }
     .meta { color:#555; font-size:0.92rem; margin-top:6px; }
-
     .meta small { color:#777; display:block; margin-top:6px; font-weight:600; }
 
     .card .row { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:8px; }
@@ -80,7 +85,6 @@
       color:#fff;border:0;padding:10px 12px;border-radius:10px;cursor:pointer;font-weight:700;
       transition: transform .12s ease, box-shadow .12s;
     }
-
     .btn-add:active { transform:translateY(2px); }
     .small-muted { color:#6b6b6b; font-size:0.85rem; }
 
@@ -139,6 +143,10 @@
     </div>
 
     <div class="controls">
+      <!-- Campo para modificar el presupuesto -->
+      <input type="number" id="nuevoPresupuesto" placeholder="Nuevo presupuesto" min="1000" style="width:160px;">
+      <button id="actualizarPresupuesto">💰 Establecer</button>
+
       <select id="filtroTipo">
         <option value="Todos">🍸 Todos</option>
       </select>
@@ -160,7 +168,6 @@
       <div class="resultado-item"><h4>Presupuesto restante</h4><p>$<span id="restante">45000</span></p></div>
       <div class="resultado-item"><h4>Alcohol puro (ml)</h4><p id="alcoholMask">•••</p></div>
       <div class="resultado-item"><h4>% Presupuesto usado</h4><p><span id="porcentaje">0</span>%</p></div>
-
       <div class="progress-wrap"><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div></div>
     </div>
   </div>
@@ -177,8 +184,10 @@
     const reiniciarBtn = document.getElementById('reiniciar');
     const revelarBtn = document.getElementById('revelarAlcohol');
     const filtroTipo = document.getElementById('filtroTipo');
+    const actualizarPresupuestoBtn = document.getElementById('actualizarPresupuesto');
+    const nuevoPresupuestoInput = document.getElementById('nuevoPresupuesto');
 
-    const initialPresupuesto = 45000;
+    let initialPresupuesto = 45000;
     let presupuesto = initialPresupuesto;
     let gastado = 0;
     let alcoholTotal = 0;
@@ -206,12 +215,11 @@
       gastadoEl.textContent = formatoCOP(gastado);
       restanteEl.textContent = formatoCOP(Math.max(0, restante));
       porcentajeEl.textContent = Math.round(porcentaje);
-      progressFill.style.width = porcentaje + '%';
+      progressFill.style.width = Math.min(100, porcentaje) + '%';
       actualizarAlcoholVisible();
     }
 
     function reiniciarJuego() {
-      presupuesto = initialPresupuesto;
       gastado = 0;
       alcoholTotal = 0;
       alcoholRevelado = false;
@@ -219,7 +227,23 @@
     }
 
     reiniciarBtn.addEventListener('click', reiniciarJuego);
-    revelarBtn.addEventListener('click', () => { alcoholRevelado = !alcoholRevelado; actualizarAlcoholVisible(); });
+
+    revelarBtn.addEventListener('click', () => {
+      alcoholRevelado = !alcoholRevelado;
+      actualizarAlcoholVisible();
+    });
+
+    // Permitir al usuario cambiar el presupuesto
+    actualizarPresupuestoBtn.addEventListener('click', () => {
+      const nuevo = parseFloat(nuevoPresupuestoInput.value);
+      if (!isNaN(nuevo) && nuevo > 0) {
+        initialPresupuesto = nuevo;
+        presupuesto = nuevo;
+        reiniciarJuego();
+      } else {
+        alert('Por favor ingresa un valor válido para el presupuesto.');
+      }
+    });
 
     fetch('alcoholes.json')
       .then(r => r.json())
